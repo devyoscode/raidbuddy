@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { iButton } from "@/types/types";
 import { useStateContext } from "@/context/statecontext";
 
-const Button = ({ children, variant, link, size, sRef }: iButton) => {
+const Button = ({ children, variant, link, size, sRef, onClick }: iButton) => {
   const router = useRouter();
   const { handleScrollClick } = useStateContext();
 
@@ -21,8 +21,12 @@ const Button = ({ children, variant, link, size, sRef }: iButton) => {
       buttonSize = "h-11 w-full py-2 justify-center";
       break;
     }
+    case "dropdown": {
+      buttonSize = "h-8 w-full text-sm";
+      break;
+    }
     default: {
-      buttonSize = "py-3 px-5";
+      buttonSize = "py-3 px-5 gap-2";
       break;
     }
   }
@@ -37,15 +41,15 @@ const Button = ({ children, variant, link, size, sRef }: iButton) => {
       break;
     }
     case "icon": {
-      buttonVariant = "";
+      buttonVariant = "flex px-3 gap-2 text-slate-800  hover:bg-slate-300/30";
       break;
     }
     case "secondary": {
-      buttonVariant = "px-0 font-semibold text-lg";
+      buttonVariant = "ml-[-18px] font-semibold text-lg";
       break;
     }
-    case "navigation": {
-      buttonVariant = "";
+    case "flipped": {
+      buttonVariant = "bg-slate-50 text-slate-900 hover:bg-slate-100";
       break;
     }
     default: {
@@ -61,6 +65,10 @@ const Button = ({ children, variant, link, size, sRef }: iButton) => {
 
     if (link) {
       router.push(link);
+    }
+
+    if (onClick) {
+      onClick();
     }
   };
 

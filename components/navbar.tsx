@@ -23,7 +23,7 @@ const Navbar = () => {
         </Button>
       </div>
       <div className="w-1/3 flex items-center justify-end">
-        <Button>Dashboard</Button>
+        <Button link="/auth">Dashboard</Button>
       </div>
     </div>
   );
