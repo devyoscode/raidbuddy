@@ -1,8 +1,8 @@
 import { defineField, defineType } from "sanity";
 
 export default defineType({
-  name: "raid",
-  title: "Raid",
+  name: "roaming",
+  title: "Roaming",
   type: "document",
   fields: [
     defineField({
@@ -41,11 +41,6 @@ export default defineType({
       type: "string",
     }),
     defineField({
-      name: "prohibitedRoles",
-      title: "Prohibited Roles",
-      type: "string",
-    }),
-    defineField({
       name: "leader",
       title: "Leader",
       type: "reference",
@@ -61,7 +56,7 @@ export default defineType({
       name: "participants",
       title: "Participants",
       type: "array",
-      of: [{ type: "reference", to: { type: "raidRole" } }],
+      of: [{ type: "reference", to: { type: "roamingRole" } }],
     }),
     defineField({
       name: "roles",
