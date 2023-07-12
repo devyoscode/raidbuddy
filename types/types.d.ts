@@ -6,6 +6,7 @@ export interface iComponent extends PropsWithChildren {
   last?: boolean;
   button?: boolean;
   title?: string;
+  check?: boolean;
 }
 
 export interface iButton extends iComponent {
@@ -15,9 +16,10 @@ export interface iButton extends iComponent {
     ref: React.MutableRefObject<HTMLDivElement | null>
   ) => void;
   size?: string;
+  onClick?: any;
 }
 
-export interface IContext {
+export interface iContext {
   aboutRef: MutableRefObject<HTMLDivElement | null>;
   projectsRef: MutableRefObject<HTMLDivElement | null>;
   contactRef: MutableRefObject<HTMLDivElement | null>;
@@ -26,4 +28,17 @@ export interface IContext {
   ) => void;
 }
 
-export interface IContextProps extends iComponent {}
+export interface iContextProps extends iComponent {}
+
+export interface iSubscription extends iComponent {
+  price: string;
+  disclaimer: string;
+}
+
+export interface iUser {
+  _type: string;
+  username: string;
+  providerId: string;
+  email: string;
+  picture: string;
+}
