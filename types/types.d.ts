@@ -1,4 +1,9 @@
-import React, { MutableRefObject, PropsWithChildren } from "react";
+import React, {
+  Dispatch,
+  MutableRefObject,
+  PropsWithChildren,
+  SetStateAction,
+} from "react";
 
 export interface iComponent extends PropsWithChildren {
   sRef?: React.MutableRefObject<HTMLDivElement | null>;
@@ -7,6 +12,7 @@ export interface iComponent extends PropsWithChildren {
   button?: boolean;
   title?: string;
   check?: boolean;
+  setBooleanState?: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface iButton extends iComponent {
@@ -26,6 +32,10 @@ export interface iContext {
   handleScrollClick: (
     ref: React.MutableRefObject<HTMLDivElement | null>
   ) => void;
+  raidCreation: boolean;
+  roamCreation: boolean;
+  setRaidCreation: Dispatch<SetStateAction<boolean>>;
+  setRoamCreation: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface iContextProps extends iComponent {}
@@ -33,6 +43,11 @@ export interface iContextProps extends iComponent {}
 export interface iSubscription extends iComponent {
   price: string;
   disclaimer: string;
+}
+
+export interface iInput extends iComponent {
+  state: string;
+  setState: Dispatch<SetStateAction<string>>;
 }
 
 export interface iUser {

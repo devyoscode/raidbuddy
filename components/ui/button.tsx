@@ -32,8 +32,8 @@ const Button = ({ children, variant, link, size, sRef, onClick }: iButton) => {
   }
 
   switch (variant) {
-    case "outline": {
-      buttonVariant = "";
+    case "dropdown": {
+      buttonVariant = "flex px-3 gap-2 text-slate-800 ";
       break;
     }
     case "link": {

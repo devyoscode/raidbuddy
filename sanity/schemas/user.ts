@@ -25,17 +25,5 @@ export default defineType({
       title: "Provider ID",
       type: "string",
     }),
-    defineField({
-      name: "raids",
-      title: "Raids",
-      type: "array",
-      of: [{ type: "reference", to: { type: "raid" } }],
-    }),
-    defineField({
-      name: "teams",
-      title: "Teams",
-      type: "array",
-      of: [{ type: "reference", to: { type: "team" } }],
-    }),
   ],
 });

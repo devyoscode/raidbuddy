@@ -4,7 +4,7 @@ import DashboardView from "@/components/dashboardView";
 
 const Herobanner = () => {
   return (
-    <div className="flex h-fit w-full border-dashed border-2 border-red-500 gap-8">
+    <div className="flex h-fit w-full gap-8">
       <div className="w-1/2 h-fit flex flex-col gap-10">
         <Herosquare title="History">
           Dive into the records, relive epic moments, and analyze strategies to

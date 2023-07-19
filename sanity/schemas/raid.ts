@@ -57,17 +57,5 @@ export default defineType({
       type: "reference",
       to: { type: "team" },
     }),
-    defineField({
-      name: "participants",
-      title: "Participants",
-      type: "array",
-      of: [{ type: "reference", to: { type: "raidRole" } }],
-    }),
-    defineField({
-      name: "roles",
-      title: "Roles",
-      type: "array",
-      of: [{ type: "reference", to: { type: "role" } }],
-    }),
   ],
 });

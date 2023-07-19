@@ -10,7 +10,7 @@ const TeamsDropdown = () => {
 
   return (
     <div onClick={() => setToggle(!toggle)} className="flex px-5 flex-shrink-0">
-      <Button variant="icon">
+      <Button variant="dropdown">
         <div className="text-2xl font-bold mr-4">The Lonely Men</div>
         <span className="mt-1">{toggle ? <UpIcon /> : <DownIcon />}</span>
       </Button>

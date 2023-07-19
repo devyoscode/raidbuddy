@@ -4,7 +4,7 @@ import Feature from "@/components/feature";
 
 const Subscriptions = () => {
   return (
-    <div className="border-dashed border-2 border-red-500 flex justify-between">
+    <div className=" flex justify-between">
       <Subscription
         price="FREE"
         disclaimer="Borem ipsum dolor sit amet, consectetur adipiscing elit."

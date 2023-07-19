@@ -36,17 +36,5 @@ export default defineType({
       title: "Invitation Token",
       type: "string",
     }),
-    defineField({
-      name: "members",
-      title: "Members",
-      type: "array",
-      of: [{ type: "reference", to: { type: "member" } }],
-    }),
-    defineField({
-      name: "raids",
-      title: "Raids",
-      type: "array",
-      of: [{ type: "reference", to: { type: "raid" } }],
-    }),
   ],
 });

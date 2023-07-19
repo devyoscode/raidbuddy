@@ -9,10 +9,13 @@ import TeamActivity from "@/components/teamActivity";
 import Attendance from "@/components/attendance";
 import Button from "@/components/ui/button";
 import { PlusIcon } from "@/components/icons";
+import DashFooter from "@/components/dashFooter";
+import { useStateContext } from "@/context/statecontext";
 
 const Page = () => {
   const router = useRouter();
   const session = useSession();
+  const { setRaidCreation, setRoamCreation } = useStateContext();
 
   useEffect(() => {
     if (session.status === "unauthenticated") router.push("/");
@@ -36,11 +39,11 @@ const Page = () => {
             </p>
           </div>
           <div className="flex gap-5">
-            <Button variant="flipped">
+            <Button onClick={() => setRoamCreation(true)} variant="flipped">
               <PlusIcon />
               New Roam
             </Button>
-            <Button>
+            <Button onClick={() => setRaidCreation(true)}>
               <PlusIcon />
               New Raid
             </Button>
@@ -51,6 +54,7 @@ const Page = () => {
           <TeamActivity />
         </div>
         <Attendance />
+        <DashFooter />
       </div>
     );
   }

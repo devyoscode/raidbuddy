@@ -20,7 +20,7 @@ const ProfileDropdown = () => {
       onClick={() => setToggle(!toggle)}
       className="w-[7%] border-l-2 border-slate-900/10 flex items-center justify-center relative"
     >
-      <Button variant="icon" size="sm">
+      <Button variant="dropdown" size="sm">
         <div className="h-10 w-10 bg-gray-300 rounded-full mr-3 border border-slate-500 overflow-hidden shadow-md flex justify-center items-center">
           <img src={session.data?.user.picture} alt="Profile Picture" />
         </div>
