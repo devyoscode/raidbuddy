@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import raidImage from "../../../public/raidImage.jpg";
 import Image from "next/image";
-import Spinner from "@/components/ui/spinner";
+import { Spinner } from "@/components/ui/spinner";
 import { signIn } from "next-auth/react";
 
 const Page = () => {
