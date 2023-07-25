@@ -22,6 +22,11 @@ export default defineType({
       to: { type: "user" },
     }),
     defineField({
+      name: "teamName",
+      title: "Team Name",
+      type: "string",
+    }),
+    defineField({
       name: "team",
       title: "Team",
       type: "reference",

@@ -8,6 +8,8 @@ import user from "@/sanity/schemas/user";
 import roaming from "@/sanity/schemas/roaming";
 import roamingRole from "@/sanity/schemas/roamingRole";
 import raidRole from "@/sanity/schemas/raidRole";
+import subscription from "@/sanity/schemas/subscription";
+import plan from "@/sanity/schemas/plan";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -20,5 +22,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     raidRole,
     roaming,
     roamingRole,
+    subscription,
+    plan,
   ],
 };
