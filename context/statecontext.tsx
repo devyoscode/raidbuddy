@@ -13,6 +13,10 @@ export const StateContext = ({ children }: iContextProps) => {
   const [raidCreation, setRaidCreation] = useState(false);
   const [roamCreation, setRoamCreation] = useState(false);
 
+  const [isTeamMember, setIsTeamMember] = useState("loading");
+  const [userTeams, setUserTeams] = useState([]);
+  const [activeTeam, setActiveTeam] = useState(0);
+
   const handleScrollClick = (
     ref: React.MutableRefObject<HTMLDivElement | null>
   ) => {
@@ -31,6 +35,12 @@ export const StateContext = ({ children }: iContextProps) => {
         setRaidCreation,
         roamCreation,
         setRoamCreation,
+        userTeams,
+        setUserTeams,
+        isTeamMember,
+        setIsTeamMember,
+        activeTeam,
+        setActiveTeam,
       }}
     >
       {children}
