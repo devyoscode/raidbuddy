@@ -13,7 +13,6 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const ProfileDropdown = () => {
   const session = useSession();
-  console.log(session);
   const [toggle, setToggle] = useState(false);
   return (
     <div
@@ -32,7 +31,7 @@ const ProfileDropdown = () => {
       {toggle && (
         <div
           onClick={() => setToggle(false)}
-          className="fixed w-screen h-screen top-0 left-0 flex opacity-10 bg-slate-200"
+          className="fixed w-screen h-screen top-0 left-0 flex z-30 opacity-10 bg-slate-200"
         />
       )}
     </div>
@@ -54,7 +53,7 @@ const DropDownMenu = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="absolute z-10 right-0 flex h-fit w-[250px] border border-slate-100 top-12 bg-white rounded shadow-md mt-[2px] flex-col py-2 px-[2px] gap-1"
+          className="absolute z-50 right-0 flex h-fit w-[250px] border border-slate-100 top-12 bg-white rounded shadow-md mt-[2px] flex-col py-2 px-[2px] gap-1"
         >
           <div className="h-12 border-b-2 border-slate-500/20 px-2">
             <span className="text-slate-900 font-medium ">
