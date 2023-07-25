@@ -58,7 +58,7 @@ const Button = ({ children, variant, link, size, sRef, onClick }: iButton) => {
     }
   }
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (sRef) {
       handleScrollClick(sRef);
     }
@@ -68,13 +68,14 @@ const Button = ({ children, variant, link, size, sRef, onClick }: iButton) => {
     }
 
     if (onClick) {
+      e.preventDefault();
       onClick();
     }
   };
 
   return (
     <button
-      onClick={handleClick}
+      onClick={(e) => handleClick(e)}
       className={`flex ${buttonSize} items-center ${buttonVariant} `}
     >
       {children}
