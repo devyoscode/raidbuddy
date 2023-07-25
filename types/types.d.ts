@@ -13,6 +13,7 @@ export interface iComponent extends PropsWithChildren {
   title?: string;
   check?: boolean;
   setBooleanState?: Dispatch<SetStateAction<boolean>>;
+  mandatory?: boolean;
 }
 
 export interface iButton extends iComponent {
@@ -36,6 +37,12 @@ export interface iContext {
   roamCreation: boolean;
   setRaidCreation: Dispatch<SetStateAction<boolean>>;
   setRoamCreation: Dispatch<SetStateAction<boolean>>;
+  userTeams: any;
+  setUserTeams: any;
+  isTeamMember: string;
+  setIsTeamMember: Dispatch<SetStateAction<string>>;
+  activeTeam: number;
+  setActiveTeam: Dispatch<SetStateAction<number>>;
 }
 
 export interface iContextProps extends iComponent {}
@@ -56,4 +63,33 @@ export interface iUser {
   providerId: string;
   email: string;
   picture: string;
+}
+
+export interface iTeam {
+  _type: string;
+  teamName: string;
+  discordChannel: string;
+  discordServer: string;
+  creatorId: string;
+  invitationToken: string;
+}
+
+export interface iMembership {
+  _createdAt: string;
+  _id: string;
+  _rev: string;
+  _type: string;
+  _updatedAt: string;
+  isAccepted: boolean;
+  team: {
+    _ref: string;
+    _type: string;
+  };
+  teamId: string;
+  teamName: string;
+  user: {
+    _ref: string;
+    _type: string;
+  };
+  userId: string;
 }
